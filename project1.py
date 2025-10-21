@@ -3,6 +3,17 @@
 # Your student id: 73128025
 # Your email: malkhula@umich.edu
 # Who or what you worked with on this project (including generative AI like ChatGPT): 
+#Solo Project
+# If you worked with generative AI also add a statement for how you used it.  
+# "I asked Chatgpt hints for debugging and suggesting the general sturcture of the code, 
+# as well as pointing out errors and giving me explanations for when I didn't understand certain code"
+
+
+# SI 201 Project 1
+# Your name: Mariam Alkhulaidi
+# Your student id: 73128025
+# Your email: malkhula@umich.edu
+# Who or what you worked with on this project (including generative AI like ChatGPT): 
 # If you worked with generative AI also add a statement for how you used it.  
 # ""
 
