@@ -91,7 +91,7 @@ def write_csv(filename, data, fieldnames):
         for row in data:
             writer.writerow(row)
 
-data = read_penguins_csv("penguins.csv")
+data = read_penguins_csv("/Users/mariamalkhulaidi/Desktop/GitSI201/fall25-project1-malkhula/penguins.csv")
 
 #print out sex percentages
 sex_stats = sex_percentage_per_species_island(data)
