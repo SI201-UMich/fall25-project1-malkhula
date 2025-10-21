@@ -51,3 +51,43 @@ def sex_percentage_per_species_island(data):
                 "percent_female": counts["female"] / total * 100
             })
     return result
+
+#average bill and flipper lengths per species
+def bill_flipper_stats(data):
+   species_totals = {}
+   for entry in data:
+       species = entry.get("species")
+       bill = entry.get("bill_length_mm")
+       flipper = entry.get("flipper_length_mm")
+       if bill in (None, "", "NA") or flipper in (None, "", "NA"):
+           continue
+       bill = float(bill)
+       flipper = float(flipper)
+       if species not in species_totals:
+           species_totals[species] = {"bill_sum": 0.0, "flipper_sum": 0.0, "count": 0}
+       species_totals[species]["bill_sum"] += bill
+       species_totals[species]["flipper_sum"] += flipper
+       species_totals[species]["count"] += 1
+
+
+   result = []
+   for species, totals in species_totals.items():
+       count = totals["count"]
+       avg_bill = totals["bill_sum"] / count
+       avg_flipper = totals["flipper_sum"] / count
+       result.append({
+           "species": species,
+           "avg_bill_length_mm": avg_bill,
+           "avg_flipper_length_mm": avg_flipper
+       })
+   return result
+
+data = read_penguins_csv("penguins.csv")
+
+# Sex percentages
+sex_stats = sex_percentage_per_species_island(data)
+print(sex_stats)  # <--- This prints the list of dictionaries directly
+
+# Bill and flipper averages
+avg_stats = bill_flipper_stats(data)
+print(avg_stats)  # <--- This prints the list of dictionaries directly
